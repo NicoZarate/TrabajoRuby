@@ -1,5 +1,6 @@
 class List < ApplicationRecord
 #commetar
+    has_many :tasks
 	validates :name, presence: true,
                     length: { minimum: 1 }
     validates :url, uniqueness: true                

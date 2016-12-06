@@ -1,0 +1,5 @@
+rails generate model Task description:string state:string  priority:string validation_start:date validation_end:date percentage:float list:references
+
+rails generate model Long --parent Task
+rails generate model Simple --parent Task
+rails generate model Temporal --parent Task
