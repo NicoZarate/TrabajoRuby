@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 
 
 	def show
-      @list = List.find(params[:id])
+      @list = List.find_by(params[:url])
     end
 
 
@@ -13,10 +13,10 @@ class ListsController < ApplicationController
 		@list=List.new
 	end
 	def edit
-       @list = List.find(params[:id])
+       @list = List.find_by(params[:url])
     end
     def update
-       @list = List.find(params[:id])
+       @list = List.find_by(params[:url])
  
      if @list.update(list_params)
           redirect_to @list
@@ -33,7 +33,7 @@ end
        end
     end
     def destroy
-       @list = List.find(params[:id])
+       @list = List.find_by(params[:url])
        @list.destroy
  
       redirect_to lists_path
