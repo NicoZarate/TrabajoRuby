@@ -24,6 +24,10 @@
     <strong>priority:</strong>
     <%= task.priority %>
   </p>
+  <%= link_to 'Edit',[:edit, task.list, task]  %>
+  <%= link_to 'Destroy', [task.list,task],
+              method: :delete,
+              data: { confirm: 'Está seguro?' } %>
 <% end %>
 <h2>Add a Task:</h2>
 <h3>select a type </h3>
