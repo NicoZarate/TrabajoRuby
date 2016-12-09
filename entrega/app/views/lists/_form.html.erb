@@ -1,24 +1,35 @@
-<%= form_for @list do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@list.errors.count, "error") %> prohibited
-        this list from being saved:
-      </h2>
-      <ul>
-        <% @list.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+         <ul class="nav nav-pills nav-stacked">
+           <li><%= link_to 'Back', lists_path %></li>
+        </ul>  
     </div>
-  <% end %>
+    <div class="col-sm-8 text-left"> 
+      <%= form_for @list do |f| %>
+            <% if @list.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@list.errors.count, "error") %> prohibited
+                  this list from being saved:
+                </h2>
+                <ul>
+                  <% @list.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-  <p>
-    <%= f.label :Nombre_de_la_lista %><br>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.submit :enviar %>
-  </p>
-<% end %>
+            <p>
+              <%= f.label :Nombre_de_la_lista %><br>
+              <%= f.text_field :name %>
+            </p>
+           
+            <p>
+              <%= f.submit :enviar %>
+            </p>
+          <% end %>
+    
+  </div>
+</div>
