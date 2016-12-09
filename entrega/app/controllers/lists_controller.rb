@@ -57,14 +57,11 @@ class ListsController < ApplicationController
    end
    def mega_buscador(listC)
         aux=[]
-        if listC.shift==nil  
-            @lists=''.split(',') 
-        else
            listC.each do |l|
                 aux<<List.find_by(url: l)
             end
             @lists=aux     
-        end          
+                 
    end 
 
    def to_array(st)
@@ -74,7 +71,7 @@ class ListsController < ApplicationController
       arreglo.join(',')
    end
    def add_list(lista)
-     @aux= to_array(cookies[:listCookies])
+     @aux= to_array(cookies[:listCookies]).last(4)
      @aux<<lista.url
      cookies[:listCookies]= to_st @aux
      #cookies[:listCookies].push(lista)

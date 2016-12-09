@@ -1,12 +1,12 @@
 <h1>Create </h1>
-<%= form_for @simpleTask, url: { :action => :create } do |f| %>
+<%= form_for @temporalTask, url: { :action => :create } do |f| %>
   <p>
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </p>
   <p>
     <%= f.label :state %><br>
-    <%= f.select :state, ['Pendiente', 'Hecha'] %><br>
+    <%= f.select :state, ['Pediente', 'Hecha'] %><br>
     
   </p>
   <p>

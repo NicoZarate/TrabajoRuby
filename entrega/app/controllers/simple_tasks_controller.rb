@@ -55,7 +55,5 @@ class SimpleTasksController < ApplicationController
     def task_params
       params.require(:simple_task).permit(:description, :state ,:priority)
     end
-    def listCookie
-      cookies[:cookies] ||= '' 
-   end
+    
 end
