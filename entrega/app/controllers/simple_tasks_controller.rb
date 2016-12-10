@@ -38,7 +38,7 @@ class SimpleTasksController < ApplicationController
        
        @simpleTask.destroy
  
-      redirect_to lists_path(@list)
+      redirect_to @list
     end
 
 

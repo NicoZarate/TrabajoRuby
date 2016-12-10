@@ -38,7 +38,7 @@ class TemporalTasksController < ApplicationController
        
        @temporalTask.destroy
  
-      redirect_to lists_path(@list)
+      redirect_to @list
     end
 
 
@@ -53,7 +53,7 @@ class TemporalTasksController < ApplicationController
        @temporalTask=TemporalTask.find(params[:id])
     end
     def task_params
-      params.require(:temporal_task).permit(:description, :state ,:priority)
+      params.require(:temporal_task).permit(:description, :state ,:priority,:validation_start,:validation_end)
     end
     
 end

@@ -15,7 +15,21 @@
     </div>
     <div class="col-sm-8 text-left"> 
       <h2>tasks</h2>
+
     <%= form_for @temporalTask, url: { :action => :create } do |f| %>
+        <% if @temporalTask.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@temporalTask.errors.count, "error") %> prohibited
+                  this temporalTask from being saved:
+                </h2>
+                <ul>
+                  <% @temporalTask.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
           <p>
             <%= f.label :description %><br>
             <%= f.text_field :description %>
@@ -28,6 +42,14 @@
           <p>
             <%= f.label :priority %><br>
             <%= f.select :priority, ['alta', 'media','baja'] %>
+          </p>
+          <p>
+            <%= f.label :validation_start %><br>
+             <%= f.date_select :validation_start %>
+          </p>
+          <p>
+            <%= f.label :validation_end %><br>
+             <%= f.date_select :validation_end %>
           </p>
           <p>
             <%= f.submit %>

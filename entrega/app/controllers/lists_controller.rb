@@ -77,7 +77,7 @@ class ListsController < ApplicationController
      #cookies[:listCookies].push(lista)
    end
    def remove_list(lista)
-     @aux= to_array(cookies[:listCookies])
+     @aux= to_array(cookies[:listCookies]).last(4)
      @aux.delete(lista.url)
      cookies[:listCookies]= to_st @aux
    end

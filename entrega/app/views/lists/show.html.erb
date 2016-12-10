@@ -24,20 +24,24 @@
       <h2>tasks</h2>
       <table class="table table-striped table-bordered table-condensed">
        <tr>
-        <th>Tipo</th>
+        <th>Type</th>
         <th>description</th>
         <th>estado</th>
         <th>Prioridad</th>
         <th>Porcentaje</th>
+        <th>validation_start</th>
+        <th>validation_end</th>
       
       </tr>
-     <% @list.tasks.each do |task| %>
+     <% @list.tasks.sort.each do |task| %>
        <tr>         
          <td>  <%= task.type %> </td>
          <td>  <%= task.description %></td>
          <td>  <%= task.state %></td>
          <td>  <%= task.priority %></td>
          <td>  <%= task.percentage %></td>
+         <td>  <%= task.validation_start %></td>
+         <td>  <%= task.validation_end %></td>
          <td>  <%= link_to 'Edit',[:edit, task.list, task]  %></td>
          <td>  <%= link_to 'Destroy', [task.list,task],
                   method: :delete,
