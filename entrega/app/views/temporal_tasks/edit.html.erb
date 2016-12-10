@@ -1,19 +1,39 @@
-<h1>Create </h1>
-<%= form_for @temporalTask, url: {:action => :update} do |f| %>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :state %><br>
-    <%= f.select :state, ['Pediente', 'Hecha'] %><br>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <h1>editar </h1>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+         <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to 'Back', lists_path %>
+          </ul>  
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h2>tasks</h2>
+     <%= form_for @temporalTask, url: {:action => :update} do |f| %>
+          <p>
+            <%= f.label :description %><br>
+            <%= f.text_field :description %>
+          </p>
+          <p>
+            <%= f.label :state %><br>
+            <%= f.select :state, ['Pediente', 'Hecha'] %><br>
+            
+          </p>
+          <p>
+            <%= f.label :priority %><br>
+            <%= f.select :priority, ['alta', 'media','baja'] %>
+          </p>
+          <p>
+            <%= f.submit %>
+          </p>
+     <% end %>
     
-  </p>
-  <p>
-    <%= f.label :priority %><br>
-    <%= f.select :priority, ['alta', 'media','baja'] %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+  </div>
+</div>
+

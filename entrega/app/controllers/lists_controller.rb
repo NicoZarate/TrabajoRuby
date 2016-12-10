@@ -24,7 +24,7 @@ class ListsController < ApplicationController
       # @list = List.find_by(url: params[:id])
  
     if @list.update(list_params)
-       redirect_to @list
+       redirect_to lists_path #@list
     else
        render 'edit'
     end 

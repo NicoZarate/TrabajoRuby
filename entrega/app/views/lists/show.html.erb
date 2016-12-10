@@ -28,6 +28,7 @@
         <th>description</th>
         <th>estado</th>
         <th>Prioridad</th>
+        <th>Porcentaje</th>
       
       </tr>
      <% @list.tasks.each do |task| %>
@@ -36,6 +37,7 @@
          <td>  <%= task.description %></td>
          <td>  <%= task.state %></td>
          <td>  <%= task.priority %></td>
+         <td>  <%= task.percentage %></td>
          <td>  <%= link_to 'Edit',[:edit, task.list, task]  %></td>
          <td>  <%= link_to 'Destroy', [task.list,task],
                   method: :delete,

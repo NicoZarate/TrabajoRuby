@@ -38,7 +38,7 @@ class LongTasksController < ApplicationController
        
        @longTask.destroy
  
-      redirect_to lists_path(@list)
+      redirect_to list_path(@list)
     end
 
 
@@ -53,7 +53,7 @@ class LongTasksController < ApplicationController
        @longTask=LongTask.find(params[:id])
     end
     def task_params
-      params.require(:long_task).permit(:description, :state ,:priority)
+      params.require(:long_task).permit(:description, :state ,:priority,:percentage)
     end
     
 end
