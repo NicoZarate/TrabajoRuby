@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tests
   get 'lists/index'
   resources :lists do
   	resources :temporal_tasks , :simple_tasks , :long_tasks
