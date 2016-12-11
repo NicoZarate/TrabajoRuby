@@ -40,6 +40,7 @@
       
       </tr>
      <% @list.tasks.sort.each do |task| %>
+      <% if task.already_expired? %>
        <tr>         
          <td>  <%= task.type %> </td>
          <td>  <%= task.description %></td>
@@ -52,7 +53,8 @@
          <td>  <%= link_to 'Destroy', [task.list,task],
                   method: :delete,
                   data: { confirm: 'Está seguro?' } %></td>
-        </tr>          
+        </tr>   
+        <% end %>       
       <% end %>
     
    </table> 

@@ -24,7 +24,9 @@ class Task < ApplicationRecord
     aux<=>aux2
  end
 
-
+ def already_expired?
+    true
+ end
 
           
 end
