@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-        <h1>crear </h1>
+        <h1>Crear </h1>
     </div>
   </div>
 </nav>
@@ -15,7 +15,7 @@
           </ul>  
     </div>
     <div class="col-sm-8 text-left"> 
-      <h2>tasks</h2>
+      <h2>Tarea Simple</h2>
      <%= form_for @simpleTask, url: { :action => :create } do |f| %>
             <% if @simpleTask.errors.any? %>
               <div id="error_explanation">
@@ -44,7 +44,7 @@
               <%= f.select :priority, ['alta', 'media','baja'] %>
             </p>
             <p>
-              <%= f.submit %>
+              <%= f.submit :enviar%>
             </p>
      <% end %>
     

@@ -14,7 +14,7 @@
           </ul>  
     </div>
     <div class="col-sm-8 text-left"> 
-      <h2>tasks</h2>
+      <h2>Tarea Temporal</h2>
      <div class="form-inputs">  
       <%= form_for @temporalTask, url: { :action => :create } do |f| %>
         <% if @temporalTask.errors.any? %>
@@ -37,7 +37,7 @@
           </p>
           <p>
             <%= f.label :estado %><br>
-            <%= f.select :state, ['Pediente', 'Hecha'] %><br>
+            <%= f.select :state, ['Pendiente', 'Hecha'] %><br>
             
           </p>
           <p>

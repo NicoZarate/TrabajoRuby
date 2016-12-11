@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 #agrego bootstrap
   gem 'bootstrap', '~> 4.0.0.alpha5'
  gem 'simple_form', '~> 3.3'
+ #el validador de la fecha
+ gem 'date_validator'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

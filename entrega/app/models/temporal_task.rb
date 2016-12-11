@@ -1,6 +1,7 @@
 class TemporalTask < Task
 	validates :validation_start,  presence: true
     validates :validation_end, presence: true
+    validates :validation_start,  date: { before: :validation_end }
 
 
     def already_expired?

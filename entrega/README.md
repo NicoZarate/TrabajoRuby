@@ -4,9 +4,15 @@ Preparación para su buen funcionamiento:
 
 En linux
 
+requisitos:
+ .git
+ .rails 5.0.0.0
+
 Realizar un en la consola:  git clone https://github.com/NicoZarate/TrabajoRuby.git
 
-Posicionarse dentro de la carpeta entega con: cd TrabajoRuby/entrega 
+Posicionarse dentro de la carpeta entrega con: cd TrabajoRuby/entrega 
+
+Hacer en consola: bundler install
 
 Hacer correr las migraciones con: rails db:migrate
 
