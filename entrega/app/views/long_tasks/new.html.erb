@@ -4,7 +4,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-        <h1>crear </h1>
+        <h1>Crear </h1>
     </div>
   </div>
 </nav>
@@ -17,26 +17,26 @@
           </ul>  
     </div>
     <div class="col-sm-8 text-left"> 
-      <h2>tasks</h2>
+       <h2>Tareas Largas</h2>
      <%= form_for @longTask, url: {:action => :create} do |f| %>
-            <p>
-              <%= f.label :description %><br>
+              <p>
+              <%= f.label :descripción %><br>
               <%= f.text_field :description %>
             </p>
             <p>
-              <%= f.label :state %><br>
+              <%= f.label :estado %><br>
               <%= f.select :state, ['Pediente','curso', 'Hecha'] %><br>
               
             </p>
             <p>
-              <%= f.label :priority %><br>
+              <%= f.label :prioridad %><br>
               <%= f.select :priority, ['alta', 'media','baja'] %>
             </p>
             <p>
               <%= f.label :porcentaje_de_avance %><br>
               <%= f.select :percentage, (0..100) %>%
             </p>
-            <%= f.submit %>
+            <%= f.submit :enviar%>
           </p>
      <% end %>
     

@@ -1,24 +1,32 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Preparación para su buen funcionamiento:
 
-* Ruby version
+En linux
 
-* System dependencies
+Realizar un en la consola:  git clone https://github.com/NicoZarate/TrabajoRuby.git
 
-* Configuration
+Posicionarse dentro de la carpeta entega con: cd TrabajoRuby/entrega 
 
-* Database creation
+Hacer correr las migraciones con: rails db:migrate
 
-* Database initialization
+Correr los seeds con: rails db:seed , para verificar que carga bien la base
+para verificar el funcionamiento de que se cargo bien los seed se ingresa en el navegador
+la url http://localhost:3000/lists/mi-lista
 
-* How to run the test suite
+Iniciar el servidor con: rails s o rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+En el navegador ingresar la url:  http://localhost:3000/
 
-* Deployment instructions
+si se desea vaciar la base de datos con : rails db:reset
 
-* ...
+####para correr los test ####
+lista:
+
+rails test test/models/list_test.rb 
+
+tareas:
+
+rails test test/models/simple_task_test.rb
+rails test test/models/temporal_task_test.rb 
+rails test test/models/long_task_test.rb

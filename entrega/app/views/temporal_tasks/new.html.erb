@@ -15,8 +15,8 @@
     </div>
     <div class="col-sm-8 text-left"> 
       <h2>tasks</h2>
-
-    <%= form_for @temporalTask, url: { :action => :create } do |f| %>
+     <div class="form-inputs">  
+      <%= form_for @temporalTask, url: { :action => :create } do |f| %>
         <% if @temporalTask.errors.any? %>
               <div id="error_explanation">
                 <h2>
@@ -30,6 +30,7 @@
                 </ul>
               </div>
             <% end %>
+
           <p>
             <%= f.label :descripciòn %><br>
             <%= f.text_field :description %>
@@ -52,9 +53,10 @@
              <%= f.date_select :validation_end %>
           </p>
           <p>
-            <%= f.submit value="enviar" %>
+            <%= f.submit :"enviar" %>
           </p>
     <% end %>
+    </div>
     
   </div>
 </div>
