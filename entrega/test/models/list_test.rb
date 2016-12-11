@@ -4,8 +4,20 @@ class ListTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test "should not save list without title" do
+  test "sin nombre" do
 	  list = List.new()
-	  assert_not list.save, "Saved the list without a title"
+	  assert list.save, "no pudo guardarse por no poseer name"
   end
+  test "con nombre" do
+	  list = List.new(name: "hola mundo")
+	  assert_not list.save, "se guardo el nombre de la lista y su url es #{list.url}"
+  end
+  test "Con nombre que cause un conflicto de unicidad de los slugs." do
+    list = List.new(name: "hola    / uno /     rails")
+    assert_not list.save, "se guardo el nombre de la lista y su url es #{list.url}"
+  end
+  
+
+
+
 end

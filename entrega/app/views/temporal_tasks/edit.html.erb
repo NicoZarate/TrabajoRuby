@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-        <h1>editar </h1>
+        <h1>Editar </h1>
     </div>
   </div>
 </nav>
@@ -30,20 +30,20 @@
               </div>
             <% end %>
           <p>
-            <%= f.label :description %><br>
+            <%= f.label :descripciòn %><br>
             <%= f.text_field :description %>
           </p>
           <p>
-            <%= f.label :state %><br>
+            <%= f.label :estado %><br>
             <%= f.select :state, ['Pediente', 'Hecha'] %><br>
             
           </p>
           <p>
-            <%= f.label :priority %><br>
+            <%= f.label :prioridad %><br>
             <%= f.select :priority, ['alta', 'media','baja'] %>
           </p>
           <p>
-            <%= f.submit %>
+            <%= f.submit value="enviar" %>
           </p>
      <% end %>
     

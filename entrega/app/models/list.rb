@@ -2,11 +2,12 @@ class List < ApplicationRecord
 #commetar
     has_many :tasks
     
-	validates :name, presence: true,
-                    length: { minimum: 1 }
+	validates :name, presence: true
     validates :url, uniqueness: true                
     before_validation( on: :create) do
-    	self.url= self.name.parameterize()
+          if !self.name.nil? 
+              self.url= self.name.parameterize() 
+           end   
     	#self.url= parameterize(self.name,separator: '-')
     end   
 

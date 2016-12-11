@@ -23,5 +23,8 @@ class Task < ApplicationRecord
   	end
     aux<=>aux2
  end
-                   
+
+
+
+          
 end

@@ -24,7 +24,7 @@ class ListsController < ApplicationController
       # @list = List.find_by(url: params[:id])
  
     if @list.update(list_params)
-       redirect_to lists_path #@list
+       redirect_to  @list
     else
        render 'edit'
     end 
@@ -33,7 +33,7 @@ class ListsController < ApplicationController
 		@list = List.new(list_params)
     if @list.save
        add_list @list
-       redirect_to lists_path
+       redirect_to action: "show", id: @list
     else 
     	  render  'new'
     end
@@ -45,7 +45,7 @@ class ListsController < ApplicationController
 
      redirect_to lists_path
   end
-    private 
+    
    def buscarEnLista
       @list = List.find_by(url:params[:id])  
    end
@@ -71,13 +71,13 @@ class ListsController < ApplicationController
       arreglo.join(',')
    end
    def add_list(lista)
-     @aux= to_array(cookies[:listCookies]).last(4)
+     @aux= to_array(listCookie).last(4)
      @aux<<lista.url
      cookies[:listCookies]= to_st @aux
      #cookies[:listCookies].push(lista)
    end
    def remove_list(lista)
-     @aux= to_array(cookies[:listCookies]).last(4)
+     @aux= to_array(listCookie).last(4)
      @aux.delete(lista.url)
      cookies[:listCookies]= to_st @aux
    end
