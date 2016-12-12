@@ -21,4 +21,7 @@ end
       task = TemporalTask.new(description: 't2', state: 'Pendiente', priority: 'media', validation_start: "2016-12-22", validation_end: "2016-10-22", list: @list)
       assert_not task.save, "se guardo, error"
   end    
+  test "cambiar a expirada" do
+     
+  end
 end
