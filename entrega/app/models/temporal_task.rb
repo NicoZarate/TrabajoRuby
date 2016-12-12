@@ -16,8 +16,10 @@ class TemporalTask < Task
        	   self.state='Expirada'
        	    self.save
        	    false
-       	else
-       		true
+       	elsif self.validation_start > Date.today
+                false
+          else
+       	   	true
        	end
 
     end

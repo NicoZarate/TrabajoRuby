@@ -10,17 +10,17 @@ class TemporalTasksController < ApplicationController
      #  @list = List.find_by(params[:list_url])
       # @list_id = List.find_by(params[:list_url]).id
        @temporalTask=TemporalTask.new(task_params)
-      if (@temporalTask.validation_start < @temporalTask.validation_end)  
+     # if (@temporalTask.validation_start < @temporalTask.validation_end)  
           @temporalTask.list_id=@list.id
          if @temporalTask.save
             redirect_to @list
           else
             render 'new'
           end
-       else
-          @temporalTask.errors.add(:base,"Ingrese fechas validas")
-          render 'new'
-       end  
+      # else
+       #   @temporalTask.errors.add(:base,"Ingrese fechas validas")
+       #   render 'new'
+      # end  
             
     end
     def edit
