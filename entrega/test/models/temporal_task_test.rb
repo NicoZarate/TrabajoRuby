@@ -7,7 +7,7 @@ class TemporalTaskTest < ActiveSupport::TestCase
 
 
 setup do
-    @list = List.create(name: 'list de test')
+    @list = List.create(name: 'listdetest')
 end
   test "crear tarea sin datos" do
       task = TemporalTask.new()
@@ -22,6 +22,9 @@ end
       assert_not task.save, "se guardo, error"
   end    
   test "cambiar a expirada" do
-     
+      task = TemporalTask.new(description: 't1', state: 'Pendiente', priority: 'media', validation_start: "2016-10-09", validation_end: "2016-12-01", list: @list)
+      assert task.save
+      assert_equal("Expirada",task.state)
+
   end
 end

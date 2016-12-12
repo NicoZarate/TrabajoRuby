@@ -9,7 +9,7 @@ d1="2016-10-09".to_date
 d2="2016-12-22".to_date
 
 
-list = List.create(name: 'mi lista')
+list = List.create(name: 'Lista 0')
 
 SimpleTask.create(description: 's1', state: 'Pendiente', priority: 'alta', list: list)
 SimpleTask.create(description: 's2', state: 'Pendiente', priority: 'baja', list: list)

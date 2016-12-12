@@ -15,4 +15,11 @@ class LongTaskTest < ActiveSupport::TestCase
       task = LongTask.new(description: 'l1', state: 'Pendiente', priority: 'alta', percentage: '22', list: @list)
       assert task.save, "no se guardo"
   end    
+  test "La actualización de una tarea larga con porcentajes dentro y fuera del rango válido" do
+     task = LongTask.create(description: 'l1', state: 'Pendiente', priority: 'alta', percentage: '22', list: @list)
+     
+     assert_not task.update(percentage: 200), "se cargo"
+  end
+
+
 end
