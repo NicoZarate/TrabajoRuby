@@ -9,6 +9,9 @@ class List < ApplicationRecord
               self.url= self.name.parameterize() 
            end   
     	#self.url= parameterize(self.name,separator: '-')
+          if !self.name.nil? && self.url==""
+             self.url=SecureRandom.hex[0,10].downcase
+          end 
     end   
 
     def to_param
