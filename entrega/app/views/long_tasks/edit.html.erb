@@ -10,12 +10,25 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
          <ul class="nav nav-pills nav-stacked">
-            <li><%= link_to 'Back', lists_path %>
+            <li><%= link_to 'Back', list_path(@list) %>
           </ul>  
     </div>
     <div class="col-sm-8 text-left"> 
       <h2>Tarea Larga</h2>
      <%= form_for @longTask, url: {:action => :update} do |f| %>
+             <% if @longTask.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@longTask.errors.count, "error") %> prohibited
+                  this longTask from being saved:
+                </h2>
+                <ul>
+                  <% @longTask.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
             <p>
               <%= f.label :descripción %><br>
               <%= f.text_field :description %>
@@ -34,7 +47,7 @@
               <%= f.label :porcentaje_de_avance %><br>
               <%= f.select :percentage, (0..100),:selected => @longTask.percentage.to_i %>%
             </p>
-            <%= f.submit :enviar %>
+            <%= f.submit :enviar , :class => "btn btn-primary" %>
           </p>
      <% end %>
     

@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   def index
       # @lists = List.all
       #listCookie.shift==nil ? @lists=''.split(',') : @lists=listCookie
-      mega_buscador(to_array(listCookie))
+      @lists=mega_buscador(to_array(listCookie))
     end
 
 

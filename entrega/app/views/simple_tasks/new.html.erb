@@ -11,7 +11,7 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
          <ul class="nav nav-pills nav-stacked">
-            <li><%= link_to 'Back', lists_path %>
+            <li><%= link_to 'Back', list_path(@list) %>
           </ul>  
     </div>
     <div class="col-sm-8 text-left"> 
@@ -44,7 +44,7 @@
               <%= f.select :priority, ['alta', 'media','baja'] %>
             </p>
             <p>
-              <%= f.submit :enviar%>
+              <%= f.submit :enviar , :class => "btn btn-primary"%>
             </p>
      <% end %>
     

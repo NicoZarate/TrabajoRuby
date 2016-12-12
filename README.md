@@ -3,7 +3,7 @@
 
 #Preparación del ambiente para su buen funcionamiento:
 
-1)Realizar un en la consola: 
+1)Realizar en la consola: 
 
 ```sh 
     git clone https://github.com/NicoZarate/TrabajoRuby.git
@@ -20,22 +20,28 @@
 ```sh
   rails db:migrate
 ```
-5)Correr los seeds con: rails db:seed , para verificar que carga bien la base
-para verificar el funcionamiento de que se cargo bien los seed se ingresa en el navegador
-```sh
-  la url http://localhost:3000/lists/Lista-0
+5)Correr los seeds con: 
+  ```sh
+
+   rails db:seed 
 ```
 6)Iniciar el servidor con: 
 ``` sh
   rails s o rails server
 ```
+
+ 7)Para verificar el funcionamiento de que se cargo bien los seed en la base de datos se ingresa en el navegador
+```sh
+  la url http://localhost:3000/lists/Lista-0
+```
+
 #Como ejecutarla
 
 1)En el navegador ingresar la url:  
 ```sh
  http://localhost:3000/
 ```
-#si se desea vaciar la base de datos con : rails db:reset
+
 
 ####para correr los test ####
 lista:

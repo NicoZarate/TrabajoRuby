@@ -1,7 +1,8 @@
-
+ <% if !@list.nil?  %>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+
         <h1><%= @list.name %></h1>
     </div>
   </div>
@@ -17,14 +18,16 @@
             <li><%= link_to 'Simple', new_list_simple_task_path(@list) %> </li>
             <li><%= link_to 'Long', new_list_long_task_path(@list) %> </li>
             <li><%= link_to 'Temporal', new_list_temporal_task_path(@list) %> </li>
-            <li><%= link_to 'Back', lists_path %>
+           
           </ul>  
+         
          <div> 
-          <h6>Fecha de creaciòn</h6>
-             <%= @list.created_at %>
-          <h6>Fecha de ultima modificaciòn</h6>
-             <%= @list.updated_at %>
-           </div>  
+            <h8>Fecha de creaciòn</h8>
+              <p><%= @list.created_at %></p>
+            <h8>Fecha de ultima modificaciòn</h8>
+             <p><%= @list.updated_at %></p>
+         </div> 
+          <%= link_to 'Back', lists_path %> 
     </div>
     <div class="col-sm-8 text-left"> 
       <h2>Tareas</h2>
@@ -39,6 +42,7 @@
         <th>Fin</th>
       
       </tr>
+
      <% @list.tasks.sort.each do |task| %>
       <% if task.already_expired? %>
        <tr>         
@@ -61,6 +65,10 @@
     
   </div>
 </div>
+<% else %>
 
+  <h4>Url de la lista no existe</h4>
+   <%= link_to 'Back', lists_path %> 
+<% end %>
 
 
