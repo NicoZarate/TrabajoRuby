@@ -32,7 +32,7 @@
 
  7)Para verificar el funcionamiento de que se cargo bien los seed en la base de datos se ingresa en el navegador
 ```sh
-  la url http://localhost:3000/lists/Lista-0
+  la url http://localhost:3000/lists/lista-0
 ```
 
 #Como ejecutarla
